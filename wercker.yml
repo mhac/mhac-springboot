@@ -18,7 +18,7 @@ push:
 deploy-accs:
   steps:
     # Deploy to Oracle Application Container Cloud
-    - peternagy/oracle-occs-container-util@1.0.0
+    - peternagy/oracle-accs-deploy@1.0.1:
         opc_user: $OPC_USERNAME
         opc_password: $OPC_PASSWORD
         rest_url: $REST_URL
@@ -26,4 +26,13 @@ deploy-accs:
         application_name: springboot-accs-demo
         application_type: java
         file: springbootdemo-0.0.1.zip
-     
+        
+  occs-manage-container:
+    steps:
+     # Manage Oracle Container Cloud Service container
+    - peternagy/oracle-occs-container-util:
+        occs_user: admin
+        occs_password: Admin123
+        rest_server_url: 129.150.217.80
+        function: stop
+        deployment_name: test-manage-occs  
