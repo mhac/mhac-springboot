@@ -18,7 +18,7 @@ push:
 deploy-accs:
   steps:
     # Deploy to Oracle Application Container Cloud
-    - peternagy/oracle-accs-deploy@1.0.1:
+    - peternagy/oracle-occs-container-util@1.0.0
         opc_user: $OPC_USERNAME
         opc_password: $OPC_PASSWORD
         rest_url: $REST_URL
